@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+## Environment Variables
+
+Create a `.env` file at the project root with your OMDb API key:
+
+```
+REACT_APP_OMDB_API_KEY=your_key_here
+```
+
+You can copy `.env.example` as a starting point.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

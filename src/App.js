@@ -3,7 +3,9 @@ import "./App.css"
 import searchIcon from "./search-cp.png"
 import MovieCard from "./MovieCard"
 
-const api_key = "http://www.omdbapi.com/?i=tt3896198&apikey=REDACTED"
+const api_base_url = "http://www.omdbapi.com/?i=tt3896198"
+const api_key = process.env.REACT_APP_OMDB_API_KEY
+const api_url = `${api_base_url}&apikey=${api_key}`
 
 const App = () =>{
 
@@ -15,7 +17,7 @@ const App = () =>{
     },[search_key])
 
     const searchMovie = async (search_key) => {
-        const response = await fetch(`${api_key}&s=${search_key}`)
+        const response = await fetch(`${api_url}&s=${search_key}`)
         const data = await response.json();
         setMoviesFn (data?.Search);
     }
